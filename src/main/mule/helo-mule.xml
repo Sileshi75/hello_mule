@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="helo-muleFlow" doc:id="01039e91-a78b-429c-ad88-96b99d9ee814" >
+		<http:listener doc:name="Listener" doc:id="d27f904a-5d76-487a-bfb9-6aa0d57c7164" config-ref="HTTP_Listener_config" path="/helomule"/>
+		<set-payload value="I trust in the Lord, Proverbs 3:5-6" doc:name="Set Payload" doc:id="35c2d1cf-f8c9-46f9-b54c-625af0e55950" />
+		<logger level="INFO" doc:name="Logger" doc:id="00082fbc-a6d2-4f25-ba62-548e574e52b0" message="#[payload]"/>
+	</flow>
+</mule>
